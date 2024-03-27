@@ -1,0 +1,36 @@
+{
+  "name": "expo-pod-pinner",
+  "version": "1.0.0",
+  "description": "The Pod Pinner plugin allows you to modify your Podfile in a managed workflow.",
+  "main": "./app.plugin.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "yarn run lint && rm -rf build && tsc",
+    "lint": "eslint . --ext .ts",
+    "prepare": "yarn run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rgomezp/expo-pod-pinner"
+  },
+  "keywords": [
+    "expo",
+    "pods",
+    "podfile",
+    "EAS"
+  ],
+  "author": "rgomezp",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rgomezp/expo-pod-pinner/issues"
+  },
+  "homepage": "https://github.com/rgomezp/expo-pod-pinner#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.10.1",
+    "@typescript-eslint/parser": "^5.10.1",
+    "eslint": "^8.8.0",
+    "expo-module-scripts": "^2.0.0",
+    "readme-md-generator": "^1.0.0",
+    "typescript": "^4.5.5"
+  }
+}
