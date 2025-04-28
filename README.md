@@ -69,6 +69,8 @@ export default {
 };
 ```
 
+### Optional: additional Podfile configuration
+
 [Podfiles](https://guides.cocoapods.org/using/the-podfile.html) can do a lot more than just pinning versions. If you want to specify a pod with a complete Podfile specification, you can do so by using the `specs` prop. For example, to specify a pod with a git source and branch: 
 
 **app.config.js**
