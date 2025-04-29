@@ -1,6 +1,6 @@
 {
   "name": "expo-pod-pinner",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "The Pod Pinner plugin allows you to modify your Podfile in a managed workflow.",
   "main": "./app.plugin.js",
   "scripts": {
