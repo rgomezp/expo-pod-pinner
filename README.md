@@ -69,13 +69,36 @@ export default {
 };
 ```
 
+### Optional: additional Podfile configuration
+
+[Podfiles](https://guides.cocoapods.org/using/the-podfile.html) can do a lot more than just pinning versions. If you want to specify a pod with a complete Podfile specification, you can do so by using the `specs` prop. For example, to specify a pod with a git source and branch: 
+
+**app.config.js**
+```js
+export default {
+  ...
+  plugins: [
+      [
+        "expo-pod-pinner",
+        {
+          "targetName": "YourTargetName",
+          "specs": [
+            { "Alamofire": ":git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'dev'" }
+          ]
+      }
+      ]
+  ]
+};
+```
+
 ### Plugin Props
 Configure the plugin using the following props in the plugin config object:
 
-| Prop        | Type   | Description                                                           |
-|-------------|--------|-----------------------------------------------------------------------|
-| `targetName`| string | The name of the target in your Podfile where the pods should be added.|
-| `pods`      | array  | An array of objects specifying the pod names and their versions.      |
+| Prop         | Type   | Description                                                                            |
+|--------------|--------|----------------------------------------------------------------------------------------|
+| `targetName` | string | The name of the target in your Podfile where the pods should be added.                 |
+| `pods`       | array  | An array of objects specifying the pod names and their versions.                       |
+| `specs`      | array  | An array of objects specifying the pod names and their complete Podfile specification. |
 
 ## Prebuild (optional)
 Prebuilding in Expo will result in the generation of the native runtime code for the project (and `ios` and `android` directories being built). By prebuilding, we automatically link and configure the native modules that have implemented CocoaPods, autolinking, and other config plugins. You can think of prebuild like a native code bundler.

@@ -1,4 +1,4 @@
-import { PLUGIN_PROPS, isPodEntry } from "../types/types";
+import {PLUGIN_PROPS, isPodEntry, isSpecEntry} from "../types/types";
 
 export function validatePluginProps(props: any): void {
   // check the type of each property
@@ -8,6 +8,10 @@ export function validatePluginProps(props: any): void {
 
   if (props.pods && isPodEntry(props.pods)) {
     throw new Error("Expo Pod Pinner: 'pods' must be an object with string keys and string values.");
+  }
+
+  if (props.specs && isSpecEntry(props.specs)) {
+    throw new Error("Expo Pod Pinner: 'specs' must be an object with string keys and string values.");
   }
 
   // check for extra properties
